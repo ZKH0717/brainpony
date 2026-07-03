@@ -1,8 +1,15 @@
 {
   "name": "brainpony",
+  "description": "先设计，再计划，然后用最懒的方式实现 - 融合 Superpower 的头脑风暴和 Ponytail 的懒人哲学",
   "version": "1.0.0",
-  "description": "BrainPony - 先设计再动手的 Claude Code 插件",
-  "hooks": {
-    "onStart": []
-  }
+  "author": {
+    "name": "BrainPony"
+  },
+  "license": "MIT",
+  "keywords": [
+    "brainstorming",
+    "planning",
+    "ponytail",
+    "claude-code"
+  ]
 }
