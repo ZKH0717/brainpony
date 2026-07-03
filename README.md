@@ -33,44 +33,58 @@
 ### 下载
 
 ```bash
-# 方式一：直接克隆
 git clone https://github.com/ZKH0717/brainpony.git
+cd brainpony
 ```
 
-### 配置
-
-#### 方式一：作为项目级插件（推荐）
-
-在你的项目根目录创建或编辑 `.claude/settings.local.json`：
-
-```json
-{
-  "projectPlugins": {
-    "brainpony": "path/to/brainpony"
-  }
-}
-```
-
-#### 方式二：全局启用
-
-编辑 `~/.claude/settings.json`，在 `enabledPlugins` 中添加：
-
-```json
-{
-  "enabledPlugins": {
-    "brainpony": true
-  }
-}
-```
-
-### 初始化
+### 一键安装
 
 ```bash
-cd your-project
-bash path/to/brainpony/scripts/init.sh
+# 自动注册到 Claude Code 并启用
+bash scripts/init.sh --install
 ```
 
-这会在你的项目中创建 `docs/superpowers/specs/` 和 `docs/superpowers/plans/` 目录，用于存放设计和计划文档。
+这个命令会：
+1. 把 BrainPony 注册到你的 `~/.claude/settings.json` 中
+2. 启用 `brainpony` 插件
+3. 禁用 `superpower` 插件（如果已安装）
+4. 创建 `docs/` 目录用于存放设计和计划文档
+
+### 或者手动配置
+
+编辑 `~/.claude/settings.json`，添加以下内容：
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "brainpony-marketplace": {
+      "source": {
+        "source": "directory",
+        "path": "C:\\Users\\你的用户名\\brainpony"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "brainpony@brainpony-marketplace": true
+  }
+}
+```
+
+> ⚠️ `path` 要改成你实际的 brainpony 目录路径。
+
+### 验证安装
+
+启动 Claude Code，输入任意需求。如果 BrainPony 自动启动 brainstorming 流程，说明安装成功。
+
+### 在项目中使用
+
+每个使用 BrainPony 的项目，在项目根目录运行：
+
+```bash
+bash /path/to/brainpony/scripts/init.sh
+```
+
+这会在项目中创建 `docs/superpowers/specs/` 和 `docs/superpowers/plans/` 目录。
 
 ---
 
