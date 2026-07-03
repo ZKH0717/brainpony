@@ -52,14 +52,6 @@ iwr -useb https://raw.githubusercontent.com/ZKH0717/brainpony/main/install.py | 
 
 启动 Claude Code，随便提个需求，BrainPony 的 brainstorming 会自动启动。
 
-### 在项目中使用
-
-每个项目根目录运行一次（创建设计/计划文档目录）：
-
-```bash
-python /path/to/brainpony/scripts/init.py
-```
-
 ---
 
 ## 使用方式
