@@ -30,61 +30,35 @@
 
 ## 安装
 
-### 下载
+### 下载并安装
 
 ```bash
 git clone https://github.com/ZKH0717/brainpony.git
-cd brainpony
+python brainpony/install.py
 ```
 
-### 一键安装
+就这两行。`install.py` 会自动：
+1. 把 BrainPony 装到 `~/.claude/plugins/` 里
+2. 注册到 Claude Code 设置中并启用
+3. 如果装了 Superpower 会自动禁用它
 
-```bash
-# 自动注册到 Claude Code 并启用
-bash scripts/init.sh --install
+### 或者单行安装（Windows PowerShell）
+
+```powershell
+iwr -useb https://raw.githubusercontent.com/ZKH0717/brainpony/main/install.py | python
 ```
 
-这个命令会：
-1. 把 BrainPony 注册到你的 `~/.claude/settings.json` 中
-2. 启用 `brainpony` 插件
-3. 禁用 `superpower` 插件（如果已安装）
-4. 创建 `docs/` 目录用于存放设计和计划文档
+### 验证
 
-### 或者手动配置
-
-编辑 `~/.claude/settings.json`，添加以下内容：
-
-```json
-{
-  "extraKnownMarketplaces": {
-    "brainpony-marketplace": {
-      "source": {
-        "source": "directory",
-        "path": "C:\\Users\\你的用户名\\brainpony"
-      }
-    }
-  },
-  "enabledPlugins": {
-    "brainpony@brainpony-marketplace": true
-  }
-}
-```
-
-> ⚠️ `path` 要改成你实际的 brainpony 目录路径。
-
-### 验证安装
-
-启动 Claude Code，输入任意需求。如果 BrainPony 自动启动 brainstorming 流程，说明安装成功。
+启动 Claude Code，随便提个需求，BrainPony 的 brainstorming 会自动启动。
 
 ### 在项目中使用
 
-每个使用 BrainPony 的项目，在项目根目录运行：
+每个项目根目录运行一次（创建设计/计划文档目录）：
 
 ```bash
-bash /path/to/brainpony/scripts/init.sh
+python /path/to/brainpony/scripts/init.py
 ```
-
-这会在项目中创建 `docs/superpowers/specs/` 和 `docs/superpowers/plans/` 目录。
 
 ---
 
