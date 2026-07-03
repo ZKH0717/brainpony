@@ -1,0 +1,16 @@
+{
+  "name": "brainpony",
+  "version": "1.0.0",
+  "plugins": [
+    {
+      "name": "brainpony",
+      "description": "先设计，再计划，然后用最懒的方式实现",
+      "version": "1.0.0",
+      "source": "./"
+    }
+  ],
+  "owner": {
+    "name": "BrainPony",
+    "email": ""
+  }
+}
